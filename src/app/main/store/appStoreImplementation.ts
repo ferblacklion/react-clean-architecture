@@ -1,10 +1,10 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import thunk from "redux-thunk";
 
-import { counterReducer } from "../../counter/data/counterReducer";
+import { counterReducer } from "../../counter/store/counterReducer";
 
 const rootReducer = combineReducers({
-  counter: counterReducer
+  counter: counterReducer,
 });
 
 const appStoreImplementation = createStore(rootReducer, applyMiddleware(thunk));

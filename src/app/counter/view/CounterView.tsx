@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import Button from "../../shared/ui/Button";
-import Spinner from "../../shared/ui/Spinner";
+import Button from "../../shared/ui/components/Button";
+import Spinner from "../../shared/ui/components/Spinner";
 
-import { useCounterViewModel } from "../controller/counterViewModel";
-import { useCounterStoreImplementation } from "../data/counterStoreImplementation";
+import { useCounterViewModel } from "../presenter/counterViewModel";
+import { useCounterStoreImplementation } from "../store/counterStoreImplementation";
 
 const Count = styled.span`
   font-size: 1.375rem;
@@ -21,7 +21,7 @@ const CounterView = () => {
     isLoading,
     getCounter,
     incrementCounter,
-    decrementCounter
+    decrementCounter,
   } = useCounterViewModel(store);
 
   React.useEffect(() => {

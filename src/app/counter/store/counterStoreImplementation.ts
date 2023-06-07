@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import type { AppRootState } from "../../main/data/appStoreImplementation";
+import type { AppRootState } from "../../main/store/appStoreImplementation";
 import type { CounterStore } from "../domain/counterStore";
 import type { Counter } from "../domain/counterEntity";
 
@@ -9,7 +9,7 @@ import type { CounterStoreState } from "./counterReducer";
 import {
   getCounterAction,
   setCounterAction,
-  updateCounterAction
+  updateCounterAction,
 } from "./counterActions";
 
 const counterSelector = (state: AppRootState) => state.counter;
@@ -42,7 +42,7 @@ const useCounterStoreImplementation = (): CounterStore => {
     isUpdating,
     setCounter,
     loadInitialCounter,
-    updateCounter
+    updateCounter,
   };
 };
 
