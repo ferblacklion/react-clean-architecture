@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import AppView from "../src/app/main/view/AppView";
+import AppView from "../src/app/main/infrastructure/view/AppView";
 
 describe("App", () => {
   it("should render properly", async () => {
