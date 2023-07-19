@@ -6,6 +6,7 @@ import Spinner from "../../../shared/ui/components/Spinner";
 
 import { useCounterViewModel } from "../presenter/counterViewModel";
 import { useCounterStoreImplementation } from "../../domain/store/counterStoreImplementation";
+import { fetchJSON } from "fetch-json-lightweight";
 
 const Count = styled.span`
   font-size: 1.375rem;
@@ -26,6 +27,12 @@ const CounterView = () => {
 
   React.useEffect(() => {
     getCounter();
+    console.log(
+      "fetchJSON",
+      fetchJSON("https://pokeapi.co/api/v2/pokemon/ditto").then((r) =>
+        console.log(r.parsedBody)
+      )
+    );
   }, [getCounter]);
 
   return (
